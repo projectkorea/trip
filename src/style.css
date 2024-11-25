@@ -103,16 +103,14 @@ header .header_inner {
 	z-index: 10;
 	background: #fff;
 	opacity: 0;
-	transform: translateX(300px);
 	transition: opacity 0.3s ease, transform 0.3s ease;
-	visibility: hidden;
+	visibility: visible;
+	opacity: 1;
+	padding-top: 100px;
+	transform: translateX(0);
 }
 
 .gnb .gnb_list.active {
-	padding-top: 100px;
-	opacity: 1;
-	transform: translateX(0);
-	visibility: visible;
 }
 .gnb .gnb_list {
 	transition: 0.3s ease;
