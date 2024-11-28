@@ -5,7 +5,7 @@ function Schedule() {
         <div class="header_inner">
           <h1 class="sub_logo">
             <a href="#">
-              <img src="./images/logo.png" alt="" />
+              <img src="images/schedules/logo.png" alt="" />
             </a>
           </h1>
         </div>
@@ -20,7 +20,7 @@ function Schedule() {
           </div>
 
           <div class="main-visual">
-            <img src="images/main-visual.png" alt="" />
+            <img src="images/schedules/main-visual.png" alt="" />
           </div>
 
           <div class="next-button">

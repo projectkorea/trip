@@ -1,7 +1,9 @@
-function Main() {
+import { NavLink, useNavigate } from 'react-router'
 
+function Main() {
+  const navigate = useNavigate()
   const handleOnClick = () => {
-    // react에서 라우팅하는 방법
+    navigate('/schedule')
   }
 
   return (
@@ -45,6 +47,9 @@ function Main() {
               >
                 AI 추천 일정보기
               </button>
+              {/* <NavLink to="/schedule" className="schedule-button">
+                AI 추천 일정보기
+              </NavLink> */}
             </div>
 
             <article className="schedule_imgbox">
