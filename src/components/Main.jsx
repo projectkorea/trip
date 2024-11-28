@@ -1,4 +1,9 @@
 function Main() {
+
+  const handleOnClick = () => {
+    // react에서 라우팅하는 방법
+  }
+
   return (
     <main>
       <section className="main-container">
@@ -33,7 +38,11 @@ function Main() {
                 <br />
                 AI는 여러분의 취향에 꼭 맞는 일정을 추천해 드립니다.
               </h3>
-              <button type="button" className="schedule-button">
+              <button
+                type="button"
+                className="schedule-button"
+                onClick={handleOnClick}
+              >
                 AI 추천 일정보기
               </button>
             </div>
