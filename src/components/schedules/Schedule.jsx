@@ -1,4 +1,11 @@
+import { useNavigate } from 'react-router'
+
 function Schedule() {
+  const navigate = useNavigate()
+
+  function handleClick() {
+    navigate('/schedule/citypage')
+  }
   return (
     <main>
       <section class="main-container">
@@ -24,7 +31,9 @@ function Schedule() {
           </div>
 
           <div class="next-button">
-            <button type="button">바로 추천받기</button>
+            <button onClick={handleClick} type="button">
+              바로 추천받기
+            </button>
           </div>
         </div>
       </section>
