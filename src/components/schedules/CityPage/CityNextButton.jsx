@@ -1,14 +1,21 @@
-function CityNextButton({ setProgressState, canNextState }) {
+function CityNextButton({ setStepStatus, stepStatus }) {
   const handleClick = () => {
-    if (!canNextState) {
+    if (!stepStatus.canNext) {
       alert('이동할 수 없습니다.')
       return
     }
 
-    setProgressState((prevState) => prevState + 1)
+    setStepStatus((prev) => {
+      return {
+        ...prev,
+        progress: prev.progress + 1,
+      }
+    })
   }
   return (
-    <div class="city-next-button">
+    <div
+      className={stepStatus.canNext ? 'city-next-button active' : 'city-next-button'}
+    >
       <button onClick={handleClick} type="button">
         다음
       </button>

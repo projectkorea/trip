@@ -1,7 +1,7 @@
-function CityProgress({ progressNumber }) {
+function CityProgress({ stepStatus }) {
   return (
-    <div class="nav_bar">
-      <div class="nav_number">{progressNumber}/6</div>
+    <div className="nav_bar">
+      <div className="nav_number">{stepStatus.progress}/6</div>
     </div>
   )
 }

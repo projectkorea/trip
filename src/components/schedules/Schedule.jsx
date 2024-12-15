@@ -8,29 +8,29 @@ function Schedule() {
   }
   return (
     <main>
-      <section class="main-container">
-        <div class="header_inner">
-          <h1 class="sub_logo">
+      <section className="main-container">
+        <div className="header_inner">
+          <h1 className="sub_logo">
             <a href="#">
               <img src="images/schedules/logo.png" alt="" />
             </a>
           </h1>
         </div>
-        <div class="main-wrap">
-          <div class="container_textbox">
-            <div class="title">
+        <div className="main-wrap">
+          <div className="container_textbox">
+            <div className="title">
               취향에 맞게 일정을
               <br />
               추천해 드려요!
             </div>
-            <div class="text">순식간에 여행 준비 끝</div>
+            <div className="text">순식간에 여행 준비 끝</div>
           </div>
 
-          <div class="main-visual">
+          <div className="main-visual">
             <img src="images/schedules/main-visual.png" alt="" />
           </div>
 
-          <div class="next-button">
+          <div className="next-button">
             <button onClick={handleClick} type="button">
               바로 추천받기
             </button>

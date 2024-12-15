@@ -7,7 +7,7 @@ import CityPage from './components/schedules/CityPage'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route index element={<App />} />
@@ -15,5 +15,5 @@ root.render(
         <Route path="/schedule/citypage" element={<CityPage />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
+  // </React.StrictMode>
 )

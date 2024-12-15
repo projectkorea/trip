@@ -4,16 +4,20 @@ import CityNextButton from './CityNextButton'
 import CityContents from './CityContents'
 
 function CityPage() {
-  const [progressState, setProgressState] = useState(1)
-  const [canNextState, setCanNextState] = useState(false)
+
+  const [stepStatus, setStepStatus] = useState({
+    progress: 1,
+    canNext: false,
+    option: "", // 일단 문자열로 구분
+  })
 
   return (
-    <div class="main-container">
-      <CityProgress progressNumber={progressState} />
-      <CityContents progressNumber={progressState} />
+    <div className="main-container">
+      <CityProgress stepStatus={stepStatus} />
+      <CityContents stepStatus={stepStatus} setStepStatus={setStepStatus} />
       <CityNextButton
-        setProgressState={setProgressState}
-        canNextState={canNextState}
+        setStepStatus={setStepStatus}
+        stepStatus={stepStatus}
       />
     </div>
   )
