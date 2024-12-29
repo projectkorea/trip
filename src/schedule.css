@@ -1,0 +1,72 @@
+main {
+	width: 100%;
+	height: 100%;
+	background-color: #f3f6f8;
+}
+.main-container {
+	width: 100%;
+	height: 100%;
+}
+.main-container .header_inner {
+	max-width: 800px;
+	width: 100%;
+	height: 50px;
+	margin: 0 auto;
+	display: flex;
+	position: relative;
+}
+
+.main-container .header_inner .sub_logo {
+	max-width: 745px;
+	width: 100%;
+	height: 34px;
+}
+.main-container .main-wrap {
+	margin: 0 auto;
+}
+.main-wrap .container_textbox {
+	font-family: "Nanum Gothic", sans-serif;
+	text-align: center;
+	padding-top: 40px;
+}
+.container_textbox .title {
+	font-size: 30px;
+	line-height: 36px;
+	font-weight: 700;
+	color: #232323;
+}
+.container_textbox .text {
+	font-size: 15px;
+	font-weight: 400;
+	color: #787878;
+	padding-top: 10px;
+	margin-bottom: 35px;
+}
+.main-wrap .main-visual {
+}
+.main-wrap .main-visual img {
+	width: 770px;
+	height: 605px;
+	margin: 0 auto;
+	display: block;
+	padding-bottom: 25px;
+}
+.main-wrap .next-button {
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	padding-bottom: 20px;
+}
+.main-wrap .next-button button {
+	width: 100%;
+	height: 40px;
+	background-color: var(--color_button_box);
+	border: none;
+	border-radius: 10px;
+	color: #f3f6f8;
+	text-align: center;
+	font-family: "Nanum Gothic", sans-serif;
+	font-weight: 700;
+	cursor: pointer;
+}
