@@ -1,4 +1,5 @@
-import AreaButton from "../../../common/AreaButton";
+import AreaButton from "@common/AreaButton";
+import Style from "./Domestic.style";
 
 function CityContentTwoDomestic() {
 	const cityList = [
@@ -23,7 +24,7 @@ function CityContentTwoDomestic() {
 				<span className="text">1곳을 선택해주세요.</span>
 			</div>
 			<div className="korea">
-				<p>대한민국</p>
+				<Style.Text>대한민국</Style.Text>
 				<div className="korea_area">
 					{cityList.map((city, index) => {
 						return (

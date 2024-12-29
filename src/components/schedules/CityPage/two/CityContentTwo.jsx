@@ -1,5 +1,5 @@
-import CityContentTwoDomestic from "./CityContentTwoDomestic";
-import CityContentTwoForeign from "./CityContentTwoForeign";
+import CityContentTwoDomestic from "./Domestic";
+import CityContentTwoForeign from "./Foreign";
 
 function CityContentTwo({ stepStatus, setStepStatus }) {
 	const { option } = stepStatus;

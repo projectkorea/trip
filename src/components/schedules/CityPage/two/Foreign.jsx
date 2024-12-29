@@ -1,11 +1,11 @@
-import AreaButton from "../../../common/AreaButton";
+import AreaButton from "@common/AreaButton";
 
 function CityContentTwoForeign() {
 	const cityList = [
-		{ text: "도쿄", id: "tokyo" },
-		{ text: "후쿠오카", id: "fukuoka" },
-		{ text: "오사카", id: "osaka" },
-		{ text: "시즈오카", id: "shizuoka" },
+		{ text: "도쿄", id: "tokyo", category:"japan" },
+		{ text: "후쿠오카", id: "fukuoka", category:"japan" },
+		{ text: "오사카", id: "osaka", category:"japan" },
+		{ text: "시즈오카", id: "shizuoka", category:"japan" },
 		{ text: "나고야", id: "nagoya" },
 		{ text: "삿포로", id: "sapporo" },
 		{ text: "오키나와", id: "okinawa" },
@@ -13,8 +13,8 @@ function CityContentTwoForeign() {
 		{ text: "칭다오", id: "qingdao" },
 		{ text: "홍콩", id: "hongkong" },
 		{ text: "타이베이", id: "taipei" },
-		{ text: "상하이", id: "shanghai" },
-		{ text: "베이징", id: "beijing" },
+		{ text: "상하이", id: "shanghai", category:"china" },
+		{ text: "베이징", id: "beijing", category:"china" },
 		{ text: "그라나다", id: "granada" },
 		{ text: "두브로브니크", id: "dubrovnik" },
 		{ text: "리스본", id: "lisbon" },
@@ -22,8 +22,8 @@ function CityContentTwoForeign() {
 		{ text: "브뤼셀", id: "brussels" },
 		{ text: "세비야", id: "seville" },
 		{ text: "포르투", id: "porto" },
-		{ text: "파리", id: "paris" },
-		{ text: "프라하", id: "prague" },
+		{ text: "파리", id: "paris", category:"europe" },
+		{ text: "프라하", id: "prague", category:"europe" },
 		{ text: "로마", id: "rome" },
 		{ text: "런던", id: "london" },
 		{ text: "바르셀로나", id: "barcelona" },
@@ -45,8 +45,8 @@ function CityContentTwoForeign() {
 		{ text: "쿠알라룸푸르", id: "kualalumpur" },
 		{ text: "달랏", id: "dalat" },
 		{ text: "다낭", id: "danang" },
-		{ text: "방콕", id: "bangkok" },
-		{ text: "세부", id: "cebu" },
+		{ text: "방콕", id: "bangkok", category:"southeastAsia" },
+		{ text: "세부", id: "cebu", category:"southeastAsia" },
 		{ text: "코타키나발루", id: "kotaKinabalu" },
 		{ text: "싱가포르", id: "singapore" },
 		{ text: "하노이", id: "hanoi" },
@@ -67,52 +67,57 @@ function CityContentTwoForeign() {
 		{ text: "사이판", id: "saipan" },
 	];
 	return (
-		<>
-			<div className="container_textbox">
-				<img src="images/airplane.png" alt="" />
-				<h2 className="title">해외에서 떠나고 싶은 곳은?</h2>
-				<span className="text">1곳을 선택해주세요.</span>
-			</div>
-			<div className="foreign">
-				<div className="foreign_area">
-					<p className="country">일본</p>
-					{cityList.map((city, index) => {
-						return (
-							<AreaButton
-								Key={city.id}
-								text={city.text}
-								id={city.id}
-							/>
-						);
-					})}
-				</div>
+    <>
+      <div className="container_textbox">
+        <img src="images/airplane.png" alt="" />
+        <h2 className="title">해외에서 떠나고 싶은 곳은?</h2>
+        <span className="text">1곳을 선택해주세요.</span>
+      </div>
+      <div className="foreign">
+        <div className="foreign_area">
+          <p className="country">일본</p>
+          {cityList
+            .filter(({ category }) => category === 'japan')
+            .map((city, index) => {
+                return (
+                  <AreaButton Key={city.id} text={city.text} id={city.id} />
+                )
+            })}
+        </div>
 
-				<div className="foreign_area">
-					<p className="country">중화/중국</p>
-				</div>
+        <div className="foreign_area">
+          <p className="country">중화/중국</p>
+          {cityList.map((city, index) => {
+            if (city.category === 'china') {
+              return <AreaButton Key={city.id} text={city.text} id={city.id} />
+            }
+          })}
+        </div>
 
-				<div className="foreign_area">
-					<p className="country">유럽</p>
-				</div>
+        <div className="foreign_area">
+          <p className="country">유럽</p>
+          {cityList.map((city, index) => {
+            if (city.category === 'europe') {
+              return <AreaButton Key={city.id} text={city.text} id={city.id} />
+            }
+          })}
+        </div>
 
-				<div className="foreign_area">
-					<p className="country">동남아시아</p>
-				</div>
+        <div className="foreign_area">
+          <p className="country">동남아시아</p>
+          {cityList.map((city, index) => {
+            if (city.category === 'southeastAsia') {
+              return <AreaButton Key={city.id} text={city.text} id={city.id} />
+            }
+          })}
+        </div>
 
-				<div className="foreign_area">
-					<p className="country">서아시아</p>
-				</div>
-
-				<div className="foreign_area">
-					<p className="country">미주</p>
-				</div>
-
-				<div className="foreign_area">
-					<p className="country">미주</p>
-				</div>
-			</div>
-		</>
-	);
+        <div className="foreign_area">
+          <p className="country">서아시아</p>
+        </div>
+      </div>
+    </>
+  )
 }
 
 export default CityContentTwoForeign;

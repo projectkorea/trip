@@ -1,5 +1,5 @@
 import PlaceSelection from "./PlaceSelection";
-import CityContentTwo from "./CityContentTwo";
+import CityContentTwo from "./two/CityContentTwo";
 import TripDuration from "./TripDuration";
 import TripCompanion from "./TripCompanion";
 import TravelStyle from "./TravelStyle";

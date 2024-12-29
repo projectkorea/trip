@@ -1,5 +1,5 @@
 import React from "react";
-import Style from "../../../styles/CityProgress.module.css";
+import Style from '@styles/CityProgress.module.css'
 
 function CityProgress({ stepStatus }) {
 	return (
