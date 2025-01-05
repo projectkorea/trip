@@ -6,13 +6,16 @@ function PlaceSelection({ setStepStatus }) {
 	useEffect(() => {
 		// 2. 다음 버튼이 눌릴 수 있게 true시켜준다.
 		if (activeDomestic || activeForeign) {
-			const option = activeDomestic ? "domestic" : "foreign";
+			const oneOption = activeDomestic ? "domestic" : "foreign";
 			setStepStatus((prev) => {
 				return {
-					...prev,
-					canNext: true,
-					option,
-				};
+          ...prev,
+          canNext: true,
+          option: {
+            ...prev.option,
+            one: oneOption,
+          },
+        }
 			});
 		}
 	}, [activeDomestic, activeForeign, setStepStatus]);

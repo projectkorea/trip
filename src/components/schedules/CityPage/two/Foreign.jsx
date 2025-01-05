@@ -1,6 +1,7 @@
-import AreaButton from "@common/AreaButton";
+import Button from '@common/CityPage/Button'
+import useStep from '@hooks/useStep'
 
-function CityContentTwoForeign() {
+function CityContentTwoForeign({setStepStatus}) {
 	const cityList = [
 		{ text: "도쿄", id: "tokyo", category:"japan" },
 		{ text: "후쿠오카", id: "fukuoka", category:"japan" },
@@ -66,6 +67,9 @@ function CityContentTwoForeign() {
 		{ text: "괌", id: "guam" },
 		{ text: "사이판", id: "saipan" },
 	];
+
+	const { handleClick } = useStep(setStepStatus)
+
 	return (
     <>
       <div className="container_textbox">
@@ -80,7 +84,7 @@ function CityContentTwoForeign() {
             .filter(({ category }) => category === 'japan')
             .map((city, index) => {
                 return (
-                  <AreaButton Key={city.id} text={city.text} id={city.id} />
+                  <Button handleClick={handleClick} Key={city.id} text={city.text} id={city.id} />
                 )
             })}
         </div>
@@ -89,7 +93,7 @@ function CityContentTwoForeign() {
           <p className="country">중화/중국</p>
           {cityList.map((city, index) => {
             if (city.category === 'china') {
-              return <AreaButton Key={city.id} text={city.text} id={city.id} />
+              return <Button handleClick={handleClick} Key={city.id} text={city.text} id={city.id} />
             }
           })}
         </div>
@@ -98,7 +102,7 @@ function CityContentTwoForeign() {
           <p className="country">유럽</p>
           {cityList.map((city, index) => {
             if (city.category === 'europe') {
-              return <AreaButton Key={city.id} text={city.text} id={city.id} />
+              return <Button handleClick={handleClick} Key={city.id} text={city.text} id={city.id} />
             }
           })}
         </div>
@@ -107,7 +111,7 @@ function CityContentTwoForeign() {
           <p className="country">동남아시아</p>
           {cityList.map((city, index) => {
             if (city.category === 'southeastAsia') {
-              return <AreaButton Key={city.id} text={city.text} id={city.id} />
+              return <Button handleClick={handleClick} Key={city.id} text={city.text} id={city.id} />
             }
           })}
         </div>

@@ -9,6 +9,7 @@ function CityNextButton({ setStepStatus, stepStatus }) {
 			return {
 				...prev,
 				progress: prev.progress + 1,
+				canNext: false
 			};
 		});
 	};

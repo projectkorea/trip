@@ -1,16 +1,17 @@
-import CityContentTwoDomestic from "./Domestic";
-import CityContentTwoForeign from "./Foreign";
+import Domestic from "./Domestic";
+import Foreign from "./Foreign";
 
 function CityContentTwo({ stepStatus, setStepStatus }) {
-	const { option } = stepStatus;
+
+	const { option: {one} } = stepStatus;
 
 	return (
 		<>
-			{option === "domestic" && (
-				<CityContentTwoDomestic setStepStatus={setStepStatus} />
+			{one === "domestic" && (
+				<Domestic setStepStatus={setStepStatus} />
 			)}
-			{option === "foreign" && (
-				<CityContentTwoForeign setStepStatus={setStepStatus} />
+			{one === "foreign" && (
+				<Foreign setStepStatus={setStepStatus} />
 			)}
 		</>
 	);
