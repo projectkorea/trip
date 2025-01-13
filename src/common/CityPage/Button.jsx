@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {useState} from "react"
 
 const Label = styled.label`
   display: flex;
@@ -19,17 +18,14 @@ const Label = styled.label`
 `;
 
 function Button({ text, id, handleClick, active }) {
-  const [state, setState] = useState('');
   return (
     <div
       onClick={() => {
-        const activeId = handleClick(id);
-        console.log('3. 버튼 안에서 리턴값', activeId);
-        setState(activeId);
+        handleClick(id);
       }}
     >
       <input type="checkbox" name={id} id={id} />
-      <Label htmlFor={id} className={`citytext ${id === state && 'active'}`}>
+      <Label htmlFor={id} className={`citytext ${active && 'active'}`}>
         {text}
       </Label>
     </div>

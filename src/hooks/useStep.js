@@ -8,8 +8,7 @@
 const useStep = (setState) => {
   const optionKeyName = ['one', 'two', 'three', 'four', 'five', 'six'];
 
-  // 현재 progress의 option 값을 가져오는 함수 추가
-  const getCurrentSelection = (stepStatus) => {
+  const getCurrentId = (stepStatus) => {
     const currentKey = optionKeyName[stepStatus.progress - 1];
     return stepStatus.option[currentKey];
   };
@@ -32,7 +31,7 @@ const useStep = (setState) => {
 
   return {
     handleClick,
-    getCurrentSelection, // 현재 선택값을 확인하는 함수 export
+    getCurrentId,
   };
 };
 
