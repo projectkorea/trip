@@ -1,7 +1,10 @@
 import Button from "@common/CityPage/Button";
 import Style from "./Domestic.style";
+import useStep from "@hooks/useStep"
 
-function Domestic({ setStepStatus }) {
+function Domestic({ stepStatus, setStepStatus }) {
+  const { getCurrentId, handleClick } = useStep(setStepStatus);
+
   const cityList = [
     { text: "가평'양평", id: 'gapyeong' },
     { text: "강릉'속초", id: 'gangneung' },
@@ -16,19 +19,6 @@ function Domestic({ setStepStatus }) {
     { text: "통영'거제'남해", id: 'tongyeong' },
     { text: "포항'안동", id: 'pohang' },
   ]
-  const handleClick = (id) => {
-		setStepStatus((prevState)=>{
-			return {
-        ...prevState,
-        canNext: true,
-				option: {
-          ...prevState.option,
-          two:id,
-        }
-      }
-
-		})
-	}
   return (
     <>
       <div className="container_textbox">
@@ -46,8 +36,9 @@ function Domestic({ setStepStatus }) {
                 text={city.text}
                 id={city.id}
                 handleClick={handleClick}
+                active={getCurrentId(stepStatus) === city.id}
               />
-            )
+            );
           })}
         </div>
       </div>

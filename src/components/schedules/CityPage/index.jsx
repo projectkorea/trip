@@ -13,17 +13,17 @@ function CityPage() {
 		progress: 1,
 		canNext: false,
 		option: {
-			one:null,
+			one:null, // optionKey에 해당하는 id값
 			two:null,
 			three:null,
 			four:null,
-			five:null,
+			five:null, // string || Array 
 			six:null,
 		}, // 각 단계별 객체로 받을 것
 	});
 
 	useEffect(() => {
-    console.log(`[Debug] stepStatus: ${JSON.stringify(stepStatus)}`)
+    console.log(`[Debug] stepStatus 값: ${JSON.stringify(stepStatus)}`)
   }, [stepStatus])
 
 	return (

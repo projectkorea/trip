@@ -13,8 +13,12 @@ function TripSelection({ stepStatus, setStepStatus }) {
         <span className="text">1곳을 선택해주세요.</span>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Button text="국내" id="domestic" active={currentId === 'domestic'} handleClick={handleClick} />
-        <Button text="해외" id="foreignCountry" active={currentId === 'foreignCountry'} handleClick={handleClick} />
+        <Button text="국내" id="domestic"
+          active={currentId === 'domestic'} 
+          handleClick={handleClick} />
+        <Button text="해외" id="foreignCountry" 
+          active={currentId === 'foreignCountry'}
+          handleClick={handleClick} />
       </div>
     </>
   );
