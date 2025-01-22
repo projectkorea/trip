@@ -21,7 +21,9 @@ function Button({ key='', text, id, handleClick, active }) {
   return (
     <div
       key={key}
-      onClick={() => {
+      onClick={(e) => {
+        e.preventDefault();
+        e.stopPropagation();
         handleClick(id);
       }}
     >
