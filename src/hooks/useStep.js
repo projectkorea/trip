@@ -8,18 +8,20 @@
 const useStep = (setStepStatus) => {
   const optionKeyName = ['one', 'two', 'three', 'four', 'five', 'six'];
 
-  // 현재 스탭에 해당되는 option값(id) 을 가져온다
-  const getCurrentId = (stepStatus) => {
-    console.log('TEST1', stepStatus);
+  // 단일 선택용 현재 선택 확인
+  const isSingleSelected = (stepStatus, id) => {
     const currentKey = optionKeyName[stepStatus.progress - 1];
-    console.log('TEST2', currentKey);
-    console.log('TEST3', stepStatus.option[currentKey]);
-
-    return stepStatus.option[currentKey];
+    return stepStatus.option[currentKey] === id;
   };
 
-  // 1. canNext:true
-  // 2. 현재 progress에 id를 업데이트
+  // 다중 선택용 포함 여부 확인
+  const isMultiSelected = (stepStatus, id) => {
+    const currentKey = optionKeyName[stepStatus.progress - 1];
+    const currentSelections = stepStatus.option[currentKey];
+    return Array.isArray(currentSelections) && currentSelections.includes(id);
+  };
+
+  // 단일 선택용
   const handleClick = (id) => {
     setStepStatus((prevState) => {
       const { progress } = prevState;
@@ -33,52 +35,36 @@ const useStep = (setStepStatus) => {
         },
       };
     });
-    return id;
   };
 
+  // 다중 선택용
   const handleMultiClick = (id) => {
-    console.log('TEST', 'handleMultiClick');
-
     setStepStatus((prevState) => {
       const { progress } = prevState;
-      const optionKey = optionKeyName[progress - 1]
-    
-      //"내가 누른 것중에 있나?"
-      const isArray = Array.isArray(prevState.option[optionKey]); 
-    if (isArray && prevState.option[optionKey].includes(id)) {
-      // 기존 게 눌리면 제거한다.
-      const duplicate = prevState.option[optionKey];
-      const result = duplicate.filter((item) => item !== id);
-      return {
-        ...prevState,
-        canNext: result.length > 0 ? true : false,
-        option: {
-          ...prevState.option,
-          [optionKey]: result,
-        },
-      };
-    } else {
-      // 새로운 게 눌리면 추가한다.
-      //prevState.option[optionKey]
-      const duplicate = Array.isArray(prevState.option[optionKey]) ? prevState.option[optionKey] : [];
-      console.log('TEST 5', duplicate, id);
-      console.log('TEST 6', optionKey, [...duplicate, id]);
+      const optionKey = optionKeyName[progress - 1];
+
+      const currentSelections = Array.isArray(prevState.option[optionKey]) ? prevState.option[optionKey] : [];
+
+      const newSelections = currentSelections.includes(id)
+        ? currentSelections.filter((item) => item !== id)
+        : [...currentSelections, id];
 
       return {
         ...prevState,
-        canNext: true,
+        canNext: newSelections.length > 0,
         option: {
           ...prevState.option,
-          [optionKey]: [...duplicate, id],
+          [optionKey]: newSelections,
         },
       };
-    }})
-  }
+    });
+  };
 
   return {
     handleClick,
     handleMultiClick,
-    getCurrentId,
+    isSingleSelected,
+    isMultiSelected,
   };
 };
 
