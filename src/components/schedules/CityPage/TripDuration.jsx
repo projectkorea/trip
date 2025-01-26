@@ -4,7 +4,7 @@ import Button from "@common/CityPage/Button"
 import useStep from "@hooks/useStep.js";
 
 function TripDuration({ stepStatus, setStepStatus }) {
-	const { handleClick, getCurrentId } = useStep(setStepStatus);
+	const { handleClick, isSingleSelected } = useStep(setStepStatus);
 
   return (
     <>
@@ -19,37 +19,37 @@ function TripDuration({ stepStatus, setStepStatus }) {
             text="당일치기"
             id="daytrip"
             handleClick={handleClick}
-            active={getCurrentId(stepStatus) === 'daytrip'}
+            active={isSingleSelected(stepStatus, 'daytrip')}
           />
           <Button
             text="1박2일"
             id="overnight_trip"
             handleClick={handleClick}
-            active={getCurrentId(stepStatus) === 'overnight_trip'}
+            active={isSingleSelected(stepStatus, 'overnight_trip')}
           />
           <Button
             text="2박3일"
             id="2night_3day"
             handleClick={handleClick}
-            active={getCurrentId(stepStatus) === '2night_3day'}
+            active={isSingleSelected(stepStatus, '2night_3day')}
           />
           <Button
             text="3박4일"
             id="3night_4day"
             handleClick={handleClick}
-            active={getCurrentId(stepStatus) === '3night_4day'}
+            active={isSingleSelected(stepStatus, '3night_4day')}
           />
           <Button
             text="4박5일"
             id="4night_5day"
             handleClick={handleClick}
-            active={getCurrentId(stepStatus) === '4night_5day'}
+            active={isSingleSelected(stepStatus, '4night_5day')}
           />
           <Button
             text="5박6일"
             id="5night_6day"
             handleClick={handleClick}
-            active={getCurrentId(stepStatus) === '5night_6day'}
+            active={isSingleSelected(stepStatus, '5night_6day')}
           />
         </div>
       </div>

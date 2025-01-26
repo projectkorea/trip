@@ -8,20 +8,18 @@
 const useStep = (setStepStatus) => {
   const optionKeyName = ['one', 'two', 'three', 'four', 'five', 'six'];
 
-  // 단일 선택용 현재 선택 확인
   const isSingleSelected = (stepStatus, id) => {
+    // one, two, three.. 중 하나
     const currentKey = optionKeyName[stepStatus.progress - 1];
     return stepStatus.option[currentKey] === id;
   };
 
-  // 다중 선택용 포함 여부 확인
   const isMultiSelected = (stepStatus, id) => {
     const currentKey = optionKeyName[stepStatus.progress - 1];
     const currentSelections = stepStatus.option[currentKey];
     return Array.isArray(currentSelections) && currentSelections.includes(id);
   };
 
-  // 단일 선택용
   const handleClick = (id) => {
     setStepStatus((prevState) => {
       const { progress } = prevState;
@@ -37,7 +35,6 @@ const useStep = (setStepStatus) => {
     });
   };
 
-  // 다중 선택용
   const handleMultiClick = (id) => {
     setStepStatus((prevState) => {
       const { progress } = prevState;

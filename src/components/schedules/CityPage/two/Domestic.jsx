@@ -3,7 +3,7 @@ import Style from "./Domestic.style";
 import useStep from "@hooks/useStep"
 
 function Domestic({ stepStatus, setStepStatus }) {
-  const { getCurrentId, handleClick } = useStep(setStepStatus);
+  const { handleClick, isSingleSelected } = useStep(setStepStatus);
 
   const cityList = [
     { text: "가평'양평", id: 'gapyeong' },
@@ -36,7 +36,7 @@ function Domestic({ stepStatus, setStepStatus }) {
                 text={city.text}
                 id={city.id}
                 handleClick={handleClick}
-                active={getCurrentId(stepStatus) === city.id}
+                active={isSingleSelected(stepStatus, city.id)}
               />
             );
           })}
