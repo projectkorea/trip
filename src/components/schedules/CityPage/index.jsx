@@ -7,11 +7,7 @@ import CityContents from "./CityContents";
 import { useEffect } from "react";
 
 function CityPage() {
-	// const [progressState, setProgressState] = useState(1)
-	// const [canNextState, setCanNextState] = useState(false)
 	const [stepStatus, setStepStatus] = useState({
-		progress: 1,
-		canNext: false,
 		option: {
 			one:null, // optionKey에 해당하는 id값
 			two:null,
@@ -28,15 +24,12 @@ function CityPage() {
 
 	return (
 		<div className="main-container">
-			<CityProgress stepStatus={stepStatus} />
+			<CityProgress />
 			<CityContents
 				stepStatus={stepStatus}
 				setStepStatus={setStepStatus}
 			/>
-			<CityNextButton
-				setStepStatus={setStepStatus}
-				stepStatus={stepStatus}
-			/>
+			<CityNextButton />
 		</div>
 	);
 }

@@ -5,6 +5,8 @@
  * 1. 현재 progress에 따라서 option을 업데이트한다.
  * 2. canNext: true를 시켜 다음 버튼을 누를 수 있게한다.
  */
+import usePlan from "@store/usePlan";
+
 const useStep = (setStepStatus) => {
   const optionKeyName = ['one', 'two', 'three', 'four', 'five', 'six'];
 
