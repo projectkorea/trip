@@ -1,9 +1,9 @@
 import Button from "@common/CityPage/Button";
 import Style from "./Domestic.style";
-import useStep from "@hooks/useStep"
+import usePlan from "@store/usePlan"
 
-function Domestic({ stepStatus, setStepStatus }) {
-  const { handleClick, isSingleSelected } = useStep(setStepStatus);
+function Domestic() {
+  const { handleSingleClick, isSingleSelected } = usePlan();
 
   const cityList = [
     { text: "가평'양평", id: 'gapyeong' },
@@ -35,8 +35,8 @@ function Domestic({ stepStatus, setStepStatus }) {
                 key={city.id}
                 text={city.text}
                 id={city.id}
-                handleClick={handleClick}
-                active={isSingleSelected(stepStatus, city.id)}
+                handleClick={handleSingleClick}
+                active={isSingleSelected(city.id)}
               />
             );
           })}

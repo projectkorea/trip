@@ -1,14 +1,14 @@
 import Domestic from "./Domestic";
 import Foreign from "./Foreign";
+import usePlan from "@store/usePlan"
 
-function CityContentTwo({ stepStatus, setStepStatus }) {
-
-	const { option: {one} } = stepStatus;
+function CityContentTwo() {
+  const { selections: { step1 } } = usePlan();
 
 	return (
     <>
-      {one === 'domestic' && <Domestic stepStatus={stepStatus} setStepStatus={setStepStatus} />}
-      {one === 'foreign' && <Foreign stepStatus={stepStatus} setStepStatus={setStepStatus} />}
+      {step1 === 'domestic' && <Domestic />}
+      {step1 === 'foreign' && <Foreign />}
     </>
   );
 }

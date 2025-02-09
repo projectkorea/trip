@@ -13,7 +13,7 @@ const state = {
   },
 };
 
-const createActions = (set) => ({
+const createActions = (set, get) => ({
   setNextProgress: () => set((prevState) => (
     { ...prevState,
        progress: prevState.progress + 1
@@ -24,11 +24,31 @@ const createActions = (set) => ({
   setSelections: (selections) => {
     set({ selections });
   },
+  // 1. canNext: true
+  // 2. 해당하는 프로그레스에 옵션을 넣어준다
+  handleSingleClick: (id) => {
+    // progress의 상태 값을 가져온다
+    // 상태값에 따라 step1, step2, ..., step6 해당하는 키 값을 가져온다
+    // 해당하는 키값에 id 업데이트한다
+    const { progress: currentProgress, selections } = get();
+    set({
+      canNext: true,
+      selections: {
+        ...selections,
+        [`step${currentProgress}`]: id
+      }
+    });
+  },
+  isSingleSelected: (id) => {
+    const { progress: currentProgress, selections } = get();
+    const currentSelection = selections[`step${currentProgress}`];
+    return currentSelection === id;
+  }
 });
 
-const usePlan = create((set) => ({
+const usePlan = create((set, get) => ({
   ...state,
-  ...createActions(set)
+  ...createActions(set, get)
 }));
 
 export default usePlan;

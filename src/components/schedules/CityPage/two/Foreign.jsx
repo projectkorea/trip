@@ -1,7 +1,7 @@
 import Button from '@common/CityPage/Button'
-import useStep from '@hooks/useStep'
+import usePlan from "@store/usePlan"
 
-function CityContentTwoForeign({setStepStatus}) {
+function CityContentTwoForeign() {
 	const cityList = [
 		{ text: "도쿄", id: "tokyo", category:"japan" },
 		{ text: "후쿠오카", id: "fukuoka", category:"japan" },
@@ -68,7 +68,7 @@ function CityContentTwoForeign({setStepStatus}) {
 		{ text: "사이판", id: "saipan" },
 	];
 
-	const { handleClick } = useStep(setStepStatus)
+	const { handleSingleClick, isSingleSelected } = usePlan()
 
 	return (
     <>
@@ -83,9 +83,7 @@ function CityContentTwoForeign({setStepStatus}) {
           {cityList
             .filter(({ category }) => category === 'japan')
             .map((city, index) => {
-                return (
-                  <Button handleClick={handleClick} Key={city.id} text={city.text} id={city.id} />
-                )
+                return <Button active={isSingleSelected(city.id)} handleClick={handleSingleClick} key={city.id} text={city.text} id={city.id} />;
             })}
         </div>
 
@@ -93,7 +91,7 @@ function CityContentTwoForeign({setStepStatus}) {
           <p className="country">중화/중국</p>
           {cityList.map((city, index) => {
             if (city.category === 'china') {
-              return <Button handleClick={handleClick} Key={city.id} text={city.text} id={city.id} />
+              return <Button active={isSingleSelected(city.id)} handleClick={handleSingleClick} key={city.id} text={city.text} id={city.id} />
             }
           })}
         </div>
@@ -102,7 +100,7 @@ function CityContentTwoForeign({setStepStatus}) {
           <p className="country">유럽</p>
           {cityList.map((city, index) => {
             if (city.category === 'europe') {
-              return <Button handleClick={handleClick} Key={city.id} text={city.text} id={city.id} />
+              return <Button active={isSingleSelected(city.id)} handleClick={handleSingleClick} key={city.id} text={city.text} id={city.id} />
             }
           })}
         </div>
@@ -111,7 +109,7 @@ function CityContentTwoForeign({setStepStatus}) {
           <p className="country">동남아시아</p>
           {cityList.map((city, index) => {
             if (city.category === 'southeastAsia') {
-              return <Button handleClick={handleClick} Key={city.id} text={city.text} id={city.id} />
+              return <Button active={isSingleSelected(city.id)} handleClick={handleSingleClick} key={city.id} text={city.text} id={city.id} />
             }
           })}
         </div>

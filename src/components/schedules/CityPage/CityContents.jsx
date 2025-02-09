@@ -4,16 +4,18 @@ import TripDuration from './TripDuration';
 import TripCompanion from './TripCompanion';
 import TravelStyle from './TravelStyle';
 import SchedulePreference from './SchedulePreference';
+import usePlan from "@store/usePlan"
 
-function CityContents({ stepStatus, setStepStatus }) {
+function CityContents() {
+  const { progress } = usePlan();
   return (
     <div className="main-wrap">
-      {stepStatus.progress === 1 && <TripSelection stepStatus={stepStatus} setStepStatus={setStepStatus} />}
-      {stepStatus.progress === 2 && <CityContentTwo stepStatus={stepStatus} setStepStatus={setStepStatus} />}
-      {stepStatus.progress === 3 && <TripDuration stepStatus={stepStatus} setStepStatus={setStepStatus} />}
-      {stepStatus.progress === 4 && <TripCompanion stepStatus={stepStatus} setStepStatus={setStepStatus} />}
-      {stepStatus.progress === 5 && <TravelStyle stepStatus={stepStatus} setStepStatus={setStepStatus} />}
-      {stepStatus.progress === 6 && <SchedulePreference stepStatus={stepStatus} setStepStatus={setStepStatus} />}
+      {progress === 1 && <TripSelection />}
+      {progress === 2 && <CityContentTwo />}
+      {progress === 3 && <TripDuration />}
+      {progress === 4 && <TripCompanion />}
+      {progress === 5 && <TravelStyle />}
+      {progress === 6 && <SchedulePreference />}
     </div>
   );
 }

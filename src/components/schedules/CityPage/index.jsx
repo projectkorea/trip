@@ -5,8 +5,11 @@ import CityProgress from '@common/CityPage/CityProgress';
 import CityNextButton from '@common/CityPage/CityNextButton'
 import CityContents from "./CityContents";
 import { useEffect } from "react";
+import usePlan from '@store/usePlan'
 
 function CityPage() {
+	const { progress, canNext, selections } = usePlan();
+	
 	const [stepStatus, setStepStatus] = useState({
 		option: {
 			one:null, // optionKey에 해당하는 id값
@@ -19,16 +22,17 @@ function CityPage() {
 	});
 
 	useEffect(() => {
-    console.log(`[Debug] stepStatus 값: ${JSON.stringify(stepStatus)}`)
-  }, [stepStatus])
+    console.log(`[Debug] usePlan: 
+			progress: ${progress}
+			canNext: ${canNext}
+			selections: ${JSON.stringify(selections)}
+		`);
+  }, [progress, canNext, selections]);
 
 	return (
 		<div className="main-container">
 			<CityProgress />
-			<CityContents
-				stepStatus={stepStatus}
-				setStepStatus={setStepStatus}
-			/>
+			<CityContents	/>
 			<CityNextButton />
 		</div>
 	);
