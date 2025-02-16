@@ -3,7 +3,7 @@ import CityContentTwo from './two/CityContentTwo';
 import TripDuration from './TripDuration';
 import TripCompanion from './TripCompanion';
 import TravelStyle from './TravelStyle';
-import SchedulePreference from './SchedulePreference';
+import TripSchedule from './TripSchedule';
 import usePlan from "@store/usePlan"
 
 function CityContents() {
@@ -15,7 +15,7 @@ function CityContents() {
       {progress === 3 && <TripDuration />}
       {progress === 4 && <TripCompanion />}
       {progress === 5 && <TravelStyle />}
-      {progress === 6 && <SchedulePreference />}
+      {progress === 6 && <TripSchedule />}
     </div>
   );
 }

@@ -39,10 +39,34 @@ const createActions = (set, get) => ({
       }
     });
   },
+  handleMultiClick: (id) => {
+    const { progress, selections } = get();
+    const optionKeyName = `step${progress}`;
+    // step4에 해당하는 값
+    const selection = selections[optionKeyName];
+    const currentSelection = Array.isArray(selection) ? selection : [];
+    const newSelection = currentSelection.includes(id)
+      ? currentSelection.filter((item) => item !== id)
+      : [...currentSelection, id];
+
+    set({
+      canNext: newSelection.length > 0,
+      selections: {
+        ...selections,
+        [optionKeyName]: newSelection,
+      },
+    });
+  },
   isSingleSelected: (id) => {
     const { progress: currentProgress, selections } = get();
     const currentSelection = selections[`step${currentProgress}`];
     return currentSelection === id;
+  },
+  isMultiSelected: (id) => {
+    const { progress, selections } = get();
+    const optionKeyName = `step${progress}`;
+    const selection = selections[optionKeyName];
+    return Array.isArray(selection) && selection.includes(id)
   }
 });
 

@@ -3,7 +3,7 @@ import Button from '@common/CityPage/Button';
 import usePlan from "@store/usePlan"
 
 function TripCompanion() {
-  const { handleSingleClick, isSingleSelected } = usePlan()
+  const { handleMultiClick, isMultiSelected } = usePlan()
   return (
     <>
       <div className="container_textbox">
@@ -12,22 +12,22 @@ function TripCompanion() {
         <span className="text">다중 선택이 가능해요.</span>
       </div>
       <div>
-        <Button text="혼자" id="alone" handleClick={handleSingleClick} active={isSingleSelected('alone')} />
-        <Button text="친구와와" id="friend" handleClick={handleSingleClick} active={isSingleSelected('friend')} />
+        <Button text="혼자" id="alone" handleClick={handleMultiClick} active={isMultiSelected('alone')} />
+        <Button text="친구와" id="friend" handleClick={handleMultiClick} active={isMultiSelected('friend')} />
         <Button
           text="연인or배우자와"
           id="couple"
-          handleClick={handleSingleClick}
-          active={isSingleSelected('couple')}
+          handleClick={handleMultiClick}
+          active={isMultiSelected('couple')}
         />
-        <Button text="아이와" id="child" handleClick={handleSingleClick} active={isSingleSelected('child')} />
+        <Button text="아이와" id="child" handleClick={handleMultiClick} active={isMultiSelected('child')} />
         <Button
           text="부모님과"
           id="parents"
-          handleClick={handleSingleClick}
-          active={isSingleSelected('parents')}
+          handleClick={handleMultiClick}
+          active={isMultiSelected('parents')}
         />
-        <Button text="기타" id="other" handleClick={handleSingleClick} active={isSingleSelected('other')} />
+        <Button text="기타" id="other" handleClick={handleMultiClick} active={isMultiSelected('other')} />
       </div>
     </>
   );
