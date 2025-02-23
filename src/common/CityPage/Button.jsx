@@ -17,7 +17,7 @@ const Label = styled.label`
   color: #181818;
 `;
 
-function Button({ key='', text, id, handleClick, active }) {
+function Button({ key = '', text, id, handleClick, active }) {
   return (
     <div
       key={key}
