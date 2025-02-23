@@ -1,10 +1,10 @@
 import Button from "@common/CityPage/Button";
-import Style from "./Domestic.style";
-import usePlan from "@store/usePlan"
+import Style from './DomesticStyle';
+import usePlan from '@store/usePlan';
+import ButtonWrapper from '@common/CityPage/ButtonWrapper';
 
 function Domestic() {
   const { handleSingleClick, isSingleSelected } = usePlan();
-
   const cityList = [
     { text: "가평'양평", id: 'gapyeong' },
     { text: "강릉'속초", id: 'gangneung' },
@@ -18,17 +18,18 @@ function Domestic() {
     { text: '태안', id: 'taean' },
     { text: "통영'거제'남해", id: 'tongyeong' },
     { text: "포항'안동", id: 'pohang' },
-  ]
+  ];
+
   return (
     <>
       <div className="container_textbox">
-        <img src="images/airplane.png" alt="" />
+        <img src="/images/airplane.png" style={{ width: '50px' }} alt="" />
         <h2 className="title">국내에서 떠나고 싶은 곳은?</h2>
         <span className="text">1곳을 선택해주세요.</span>
       </div>
       <div className="korea">
         <Style.Text>대한민국</Style.Text>
-        <div className="korea_area">
+        <ButtonWrapper direction="column">
           {cityList.map((city, index) => {
             return (
               <Button
@@ -40,10 +41,10 @@ function Domestic() {
               />
             );
           })}
-        </div>
+        </ButtonWrapper>
       </div>
     </>
-  )
+  );
 }
 
 export default Domestic;

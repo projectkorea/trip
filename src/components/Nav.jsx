@@ -1,5 +1,17 @@
+import { useNavigate } from "react-router";
+
 function Nav({ modalState, setModalState }) {
 	console.log("modalState", modalState);
+
+	const navigate = useNavigate();
+	const handleOnClick = () => {
+		navigate("/schedule/login/Login");
+	};
+
+	const handleClick = () => {
+		navigate("/schedule");
+	};
+
 	return (
 		modalState && (
 			<nav className="gnb">
@@ -11,19 +23,15 @@ function Nav({ modalState, setModalState }) {
 					>
 						<i className="fa-solid fa-xmark"></i>
 					</button>
-					<li className="login">
-						<a href="./schedule/citypage/login/index.html">
-							로그인/회원가입
-						</a>
+					<li className="login" onClick={handleOnClick}>
+						<a href="">로그인/회원가입</a>
 					</li>
 					<ul className="lnb">
-						<li>
-							<a href="./schedule/citypage/login/index.html">
-								내예약
-							</a>
+						<li onClick={handleOnClick}>
+							<a href="#">내예약</a>
 						</li>
-						<li>
-							<a href="schedule/index.html">AI 추천 일정보기</a>
+						<li onClick={handleClick}>
+							<a href="">AI 추천 일정보기</a>
 						</li>
 						<li>
 							<a href="#">투어 가이드 보기</a>
