@@ -1,5 +1,5 @@
-import Domestic from "./Domestic";
-import Foreign from "./Foreign";
+import Domestic from './Domestic';
+import Foreign from './Foreign';
 import usePlan from '@store/usePlan';
 
 function CityContentTwo() {

@@ -8,7 +8,6 @@ import { useState } from 'react';
 
 function App() {
   const [modalState, setModalState] = useState(false);
-
   return (
     <>
       <Header setModalState={setModalState} />

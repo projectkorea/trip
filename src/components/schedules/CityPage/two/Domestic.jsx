@@ -1,7 +1,7 @@
-import Button from "@common/CityPage/Button";
 import Style from './DomesticStyle';
+import Button from '@common/CityPage/Button';
 import usePlan from '@store/usePlan';
-import ButtonWrapper from '@common/CityPage/ButtonWrapper';
+import ButtonWrapper, { ContainerTextbox, Title, Text, Wrapper, Image } from '@common/CityPage/ButtonWrapper';
 
 function Domestic() {
   const { handleSingleClick, isSingleSelected } = usePlan();
@@ -22,14 +22,15 @@ function Domestic() {
 
   return (
     <>
-      <div className="container_textbox">
-        <img src="/images/airplane.png" style={{ width: '50px' }} alt="" />
-        <h2 className="title">국내에서 떠나고 싶은 곳은?</h2>
-        <span className="text">1곳을 선택해주세요.</span>
-      </div>
+      <ContainerTextbox>
+        <Image src="/images/airplane.png" style={{ width: '50px' }} alt="Airplane" />
+        <Title>국내에서 떠나고 싶은 곳은?</Title>
+        <Text>1곳을 선택해주세요.</Text>
+      </ContainerTextbox>
+
       <div className="korea">
-        <Style.Text>대한민국</Style.Text>
-        <ButtonWrapper direction="column">
+        {/* <Style.Text>대한민국</Style.Text> */}
+        <ButtonWrapper direction="row">
           {cityList.map((city, index) => {
             return (
               <Button

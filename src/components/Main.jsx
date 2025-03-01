@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router";
+import { NavLink, useNavigate } from 'react-router';
 import ScheduleButton from '@common/ScheduleButton';
 
 function Main() {
@@ -12,6 +12,7 @@ function Main() {
       <section className="main-container">
         <div className="main-wrap home">
           <div className="schedule-btn-container">
+            {/* <img src="images/main.jpg" alt="main_img" /> */}
             <ScheduleButton text="AI 추천 일정보기" onClick={handleOnClick} to="/components/ScheduleManager" />
             <ScheduleButton text="즉시 투어 가이드" onClick={handleOnClick} to="/components/TripDetails" />
           </div>
