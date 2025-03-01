@@ -15,8 +15,6 @@ export const Foreign = styled.div`
 export const Country = styled.div`
   max-width: 800px;
   width: 100%;
-  position: absolute;
-  top: 10px;
   left: 20px;
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 14px;

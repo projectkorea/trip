@@ -59,6 +59,9 @@ header .header_inner {
 }
 .header_inner .logo img {
 }
+.logo.black {
+  filter: brightness(0);
+}
 .header_inner .header-right-menu {
   position: absolute;
   top: 20px;
@@ -219,19 +222,6 @@ main {
   left: 280px;
 }
 
-.schedule-container {
-  width: 100%;
-  height: 100%;
-  padding-top: 160px;
-  background-color: #fff;
-}
-.schedule-container .schedule-inner {
-  max-width: 1200px;
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-}
-
 .schedule-textbox .subTitle {
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 18px;
@@ -282,18 +272,6 @@ main {
   word-break: keep-all;
   color: #787878;
   margin-bottom: 35px;
-}
-.schedule_content_img .bottom_text .schedule-button {
-  width: 230px;
-  height: 50px;
-  background-color: var(--color_button_box);
-  border-radius: 30px;
-  font-family: 'Nanum Gothic', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
 }
 .schedule_content_img .schedule_imgbox {
   position: absolute;

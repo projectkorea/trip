@@ -87,9 +87,7 @@ function Foreign() {
 
       <div className="foreign">
         <div className="foreign_area">
-          {/* <p className="country">일본</p> */}
-          <Style.Country>일본</Style.Country>
-          <ButtonWrapper direction="row">
+          <ButtonWrapper titleText="일본" direction="row">
             {cityList
               .filter(({ category }) => category === 'japan')
               .map((city, index) => {
@@ -107,8 +105,7 @@ function Foreign() {
         </div>
 
         <div className="foreign_area">
-          <p className="country">중화/중국</p>
-          <ButtonWrapper direction="row">
+          <ButtonWrapper titleText="중화/중국" direction="row">
             {cityList
               .filter(({ category }) => category === 'china')
               .map((city, index) => {
@@ -126,8 +123,7 @@ function Foreign() {
         </div>
 
         <div className="foreign_area">
-          <p className="country">유럽</p>
-          <ButtonWrapper direction="row">
+          <ButtonWrapper titleText="유럽" direction="row">
             {cityList
               .filter(({ category }) => category === 'europe')
               .map((city, index) => {
@@ -145,8 +141,7 @@ function Foreign() {
         </div>
 
         <div className="foreign_area">
-          <p className="country">동남아시아</p>
-          <ButtonWrapper direction="row">
+          <ButtonWrapper titleText="동남아시아" direction="row">
             {cityList
               .filter(({ category }) => category === 'southeastAsia')
               .map((city, index) => {
@@ -164,8 +159,7 @@ function Foreign() {
         </div>
 
         <div className="foreign_area">
-          <p className="country">서아시아</p>
-          <ButtonWrapper direction="row">
+          <ButtonWrapper titleText="서아시아" direction="row">
             {cityList
               .filter(({ category }) => category === 'westAsia')
               .map((city, index) => {
@@ -183,8 +177,7 @@ function Foreign() {
         </div>
 
         <div className="foreign_area">
-          <p className="country">미주</p>
-          <ButtonWrapper direction="row">
+          <ButtonWrapper titleText="미국" direction="row">
             {cityList
               .filter(({ category }) => category === 'america')
               .map((city, index) => {
@@ -202,8 +195,7 @@ function Foreign() {
         </div>
 
         <div className="foreign_area">
-          <p className="country">남태평양</p>
-          <ButtonWrapper direction="row">
+          <ButtonWrapper titleText="남태평양" direction="row">
             {cityList
               .filter(({ category }) => category === 'southPacific')
               .map((city, index) => {

@@ -31,6 +31,7 @@ const Wrapper = styled.div`
   width: 100%;
   max-width: 800px;
   margin: 50px auto 0;
+  position: relative;
 `;
 
 const Image = styled.img`
@@ -38,8 +39,22 @@ const Image = styled.img`
   height: 50px;
 `;
 
-function ButtonWrapper({ children, direction = 'row' }) {
-  return <Wrapper direction={direction}>{children}</Wrapper>;
+const TitleText = styled.div`
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  font-size: 15px;
+  font-weight: 400;
+  color: #787878;
+`;
+
+function ButtonWrapper({ children, direction = 'row', titleText }) {
+  return (
+    <Wrapper direction={direction}>
+      <TitleText>{titleText}</TitleText>
+      {children}
+    </Wrapper>
+  );
 }
 
 export { ContainerTextbox, Title, Text, Wrapper, Image };

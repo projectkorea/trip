@@ -23,6 +23,7 @@ main {
 }
 .main-container .main-wrap {
 	margin: 0 auto;
+	padding-bottom: 8rem;
 }
 .main-wrap .container_textbox {
 	font-family: "Nanum Gothic", sans-serif;

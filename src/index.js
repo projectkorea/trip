@@ -6,7 +6,6 @@ import Schedule from './components/schedules/Schedule';
 import CityPage from './components/schedules/CityPage';
 
 import ScheduleButton from '@common/ScheduleButton';
-import ScheduleManager from './components/ScheduleManager';
 import TripDetails from './components/TripDetails';
 import Tourguide from './components/schedules/Tourguide';
 
@@ -18,7 +17,6 @@ root.render(
       <Route index element={<App />} />
       <Route path="/" element={<ScheduleButton />} />
       <Route path="/schedule" element={<Schedule />} />
-      <Route path="/components/ScheduleManager" element={<ScheduleManager />} />
       <Route path="/schedule/citypage" element={<CityPage />} />
       <Route path="/components/TripDetails" element={<TripDetails />} />
       <Route path="/Tourguide" element={<Tourguide />} />
