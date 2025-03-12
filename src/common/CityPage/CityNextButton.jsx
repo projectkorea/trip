@@ -1,17 +1,17 @@
 import usePlan from "@store/usePlan";
 
 function CityNextButton() {
-	const { canNext, setNextProgress, setCanNext } = usePlan();
+	const { canNext, setNextProgress, setCanNextByProgressValue } = usePlan();
 
-	const handleClick = () => {
-		if (!canNext) {
-			alert("이동할 수 없습니다.");
-			return;
-		}
+  const handleClick = () => {
+    if (!canNext) {
+      alert('이동할 수 없습니다.');
+      return;
+    }
 
-		setNextProgress();
-		setCanNext(false);
-	};
+    setNextProgress();
+    setCanNextByProgressValue();
+  };
 
 	return (
 		<div

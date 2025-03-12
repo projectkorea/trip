@@ -1,18 +1,17 @@
 import { create } from "zustand";
 
 const state = {
-	progress: 1,
-	canNext: false,
-	selections: {
-		step1: null, // 국내, 해외
-		step2: null, // 지역
-		step3: null, // 기간
-		step4: null, // 인원
-		step5: null, // 선호사항
-		step6: null, // 일정
-	},
+  progress: 1,
+  canNext: false,
+  selections: {
+    step1: null, // 국내, 해외
+    step2: null, // 지역
+    step3: null, // 기간
+    step4: null, // 인원
+    step5: null, // 선호사항
+    step6: null, // 일정
+  },
 };
-
 const createActions = (set, get) => ({
   setNextProgress: () =>
     set((prevState) => ({
@@ -27,6 +26,17 @@ const createActions = (set, get) => ({
     })),
   setCanNext: (canNext) => {
     set({ canNext });
+  },
+  setCanNextByProgressValue: () => {
+    const { progress, selections } = get();
+    const currentSelection = selections[`step${progress}`];
+
+    if (currentSelection === null) {
+      set({ canNext: false });
+    } else {
+      set({ canNext: true });
+    }
+
   },
   setSelections: (selections) => {
     set({ selections });
