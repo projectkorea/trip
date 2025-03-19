@@ -11,6 +11,12 @@ const SpinnerContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 400px;
+  position: absolute;
+  z-index: 1000;
+  background-color: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
 const Spinner = styled.div`

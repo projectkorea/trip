@@ -8,6 +8,7 @@ import CityPage from './components/schedules/CityPage';
 import ScheduleButton from '@common/ScheduleButton';
 import TripDetails from './components/TripDetails';
 import Tourguide from './components/schedules/Tourguide';
+import AIResult from './components/schedules/AIResult';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
       <Route path="/" element={<ScheduleButton />} />
       <Route path="/schedule" element={<Schedule />} />
       <Route path="/schedule/citypage" element={<CityPage />} />
+      <Route path="/schedule/result" element={<AIResult />} />
       <Route path="/components/TripDetails" element={<TripDetails />} />
       <Route path="/Tourguide" element={<Tourguide />} />
     </Routes>
