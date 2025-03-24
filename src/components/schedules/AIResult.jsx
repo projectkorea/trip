@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import LoadingSpinner from '@common/LoadingSpinner';
 import useGemini from '@hooks/useGemini';
-import usePlan from '@store/usePlan';
 
 const ResultContainer = styled.div`
   display: flex;
@@ -46,7 +45,6 @@ const ResultContent = styled.div`
   padding: 1.5rem;
   background-color: #f8f9fa;
   border-radius: 8px;
-  border-left: 4px solid #4285f4;
   line-height: 1.6;
   font-size: 1.1rem;
   color: #333;
@@ -62,11 +60,27 @@ const ErrorMessage = styled.div`
   text-align: center;
 `;
 
-function AIResult({ title = '', description = '', imageUrl = '' }) {
-  const { selections } = usePlan();
-  const stringSelections = JSON.stringify(selections);
-  const prompt = stringSelections;
-  const { result, loading, error } = useGemini(prompt);
+const AITitle = styled.h2`
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+`;
+
+const AIDescription = styled.p`
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+`;
+
+function AIResult() {
+  const { result, loading, error, imageURL } = useGemini();
+  let { title, course, tips } = result;
+  console.log('TEST', result);
+  console.log(`title: ${title}, course: ${course}, tips: ${tips}`);
+
+  course = JSON.stringify(course);
+  tips = JSON.stringify(tips);
+
   useEffect(() => {
     if (result) {
       console.log('Gemini 응답:', result);
@@ -81,18 +95,33 @@ function AIResult({ title = '', description = '', imageUrl = '' }) {
   ) : (
     <ResultContainer>
       <ResultHeader>
-        <Title>{title || 'AI 응답 결과'}</Title>
-        <Description>{description || 'Gemini AI가 제공한 응답 결과입니다.'}</Description>
+        <Title>{'AI 응답 결과'}</Title>
+        <Description>{'Gemini AI가 제공한 응답 결과입니다.'}</Description>
       </ResultHeader>
 
-      {imageUrl && <ResultImage src={imageUrl} alt="관련 이미지" />}
+      {imageURL && <ResultImage src={imageURL} alt="관련 이미지" />}
 
       {error ? (
         <ErrorMessage>오류가 발생했습니다: {error}</ErrorMessage>
       ) : loading ? (
         <ResultContent>데이터를 불러오는 중입니다...</ResultContent>
       ) : (
-        <ResultContent>{result || '아직 결과가 없습니다.'}</ResultContent>
+        <ResultContent>
+          {result ? (
+            <>
+              <AITitle>{title}</AITitle>
+              <br></br>
+
+              <h3>여행 일정</h3>
+              <AIDescription>{course}</AIDescription>
+              <br></br>
+              <h3>팁</h3>
+              <AIDescription>{tips}</AIDescription>
+            </>
+          ) : (
+            '아직 결과가 없습니다.'
+          )}
+        </ResultContent>
       )}
     </ResultContainer>
   );
