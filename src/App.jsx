@@ -11,7 +11,6 @@ function App() {
 
   return (
     <>
-      <Header setModalState={setModalState} />
       <Nav modalState={modalState} setModalState={setModalState} />
       <Main />
     </>
