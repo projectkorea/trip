@@ -3,10 +3,6 @@ main {
 	height: 100%;
 	background-color: #f3f6f8;
 }
-.main-container {
-	width: 100%;
-	height: 100%;
-}
 .main-container .header_inner {
 	max-width: 800px;
 	width: 100%;
@@ -21,15 +17,6 @@ main {
 	width: 100%;
 	height: 34px;
 }
-.main-container .main-wrap {
-	margin: 0 auto;
-	padding-bottom: 8rem;
-}
-.main-wrap .container_textbox {
-	font-family: "Nanum Gothic", sans-serif;
-	text-align: center;
-	padding-top: 40px;
-}
 .container_textbox .title {
 	font-size: 30px;
 	line-height: 36px;
@@ -42,15 +29,6 @@ main {
 	color: #787878;
 	padding-top: 10px;
 	margin-bottom: 35px;
-}
-.main-wrap .main-visual {
-}
-.main-wrap .main-visual img {
-	width: 770px;
-	height: 605px;
-	margin: 0 auto;
-	display: block;
-	padding-bottom: 25px;
 }
 .main-wrap .next-button {
 	max-width: 800px;

@@ -1,26 +1,23 @@
 import styled from "styled-components";
 
-//.main-container
 export const MainContainer = styled.div`
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 `;
 
-//.main-container .main-wrap
 export const MainWrap = styled.div`
-	max-width: 800px;
-	width: 100%;
-	margin: 80px auto;
+  max-width: 800px;
+  width: 100%;
+  margin: 80px auto;
 `;
 
 //.main-wrap .main-visual
 export const MainVisual = styled.div`
-	width: 211px;
-	height: 170px;
-	margin: 0 auto;
-	margin-bottom: 30px;
+  width: 211px;
+  height: 170px;
+  margin: 0 auto;
+  margin-bottom: 30px;
 `;
-//.main-container .main-wrap .main-visual img
 export const MainVisualImg = styled.div`
 	width: 100%;
 	font-size: 0;

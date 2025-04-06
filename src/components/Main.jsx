@@ -1,5 +1,27 @@
-import { NavLink, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import ScheduleButton from '@common/ScheduleButton';
+import styled from 'styled-components';
+
+const LandingPageLayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url(/images/main.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
+
+const Title = styled.h1`
+  font-size: 3rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  width: 80%;
+`;
 
 function Main() {
   const navigate = useNavigate();
@@ -8,29 +30,10 @@ function Main() {
   };
 
   return (
-    <main>
-      <section className="main-container">
-        <div className="main-wrap home">
-          <div className="schedule-btn-container">
-            <ScheduleButton text="AI 추천 일정보기" onClick={handleOnClick} to="/schedule" />
-            <ScheduleButton text="즉시 투어 가이드" onClick={handleOnClick} to="/components/TripDetails" />
-          </div>
-        </div>
-      </section>
-
-      <div className="popup-container">
-        <div className="popup-content">
-          <p className="popup-message">위치정보 이용권한 설정이 필요합니다.</p>
-          <section className="popup-description">
-            <p>내 근처 정보를 추천받고 싶다면</p>
-            <span className="popup-notice">사용 중인 브라우저의 위치 권한을 허용해주세요.</span>
-          </section>
-          <button className="popup-close">
-            <span className="close-text">닫기</span>
-          </button>
-        </div>
-      </div>
-    </main>
+    <LandingPageLayout>
+      <Title>취향에 맞게 똑똑한 AI가 일정을 추천해 드려요!</Title>
+      <ScheduleButton text="AI 추천 일정보기" onClick={handleOnClick} to="/schedule" />
+    </LandingPageLayout>
   );
 }
 
