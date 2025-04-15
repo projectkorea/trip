@@ -29,8 +29,7 @@ function Domestic() {
       </ContainerTextbox>
 
       <div className="korea">
-        {/* <Style.Text>대한민국</Style.Text> */}
-        <ButtonWrapper direction="row">
+        <ButtonWrapper titleText="대한민국" direction="row">
           {cityList.map((city, index) => {
             return (
               <Button

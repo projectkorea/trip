@@ -12,7 +12,7 @@ function Header({ setModalState }) {
     navigate('/');
   };
 
-	return (
+  return (
     <header>
       <div className="header_inner">
         <h1 className="logo" onClick={handleClick}>

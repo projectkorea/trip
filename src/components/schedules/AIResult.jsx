@@ -59,7 +59,6 @@ const ErrorMessage = styled.div`
   border-radius: 8px;
   text-align: center;
 `;
-
 const AITitle = styled.h2`
   font-size: 2rem;
   color: #333;
@@ -75,7 +74,7 @@ const AIDescription = styled.p`
 function AIResult() {
   const { result, loading, error, imageURL } = useGemini();
   let { title, course, tips } = result;
-  console.log('TEST', result);
+  console.log('TEST', imageURL);
   console.log(`title: ${title}, course: ${course}, tips: ${tips}`);
 
   course = JSON.stringify(course);
@@ -88,7 +87,8 @@ function AIResult() {
     if (error) {
       console.error('Gemini 에러:', error);
     }
-  }, [result, error]);
+    console.log('TEST', imageURL);
+  }, [result, error, imageURL]);
 
   return loading ? (
     <LoadingSpinner />

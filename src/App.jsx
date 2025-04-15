@@ -1,5 +1,4 @@
 import './style.css';
-import './schedule.css';
 import './common.css';
 import Nav from './components/Nav';
 import Header from './components/Header';
@@ -11,6 +10,7 @@ function App() {
 
   return (
     <>
+      <Header setModalState={setModalState} />
       <Nav modalState={modalState} setModalState={setModalState} />
       <Main />
     </>

@@ -14,7 +14,6 @@ const LandingPageLayout = styled.div`
   background-position: center;
   background-repeat: no-repeat;
 `;
-
 const Title = styled.h1`
   font-size: 3rem;
   font-weight: 600;

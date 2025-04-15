@@ -103,7 +103,6 @@ const useGemini = () => {
             setImageURL(imageUrl);
           }
         }
-
         // 최종 프롬프트 사용
         // ```json{내용물}```
         const response = await model.generateContent(prompt);
@@ -122,7 +121,6 @@ const useGemini = () => {
         setLoading(false);
       }
     };
-
     if (prompt) {
       fetchData();
     }

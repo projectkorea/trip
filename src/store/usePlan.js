@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 const state = {
   progress: 1,
@@ -12,6 +12,7 @@ const state = {
     step6: null, // 일정
   },
 };
+
 const createActions = (set, get) => ({
   setNextProgress: () =>
     set((prevState) => ({
@@ -36,8 +37,8 @@ const createActions = (set, get) => ({
     } else {
       set({ canNext: true });
     }
-
   },
+
   setSelections: (selections) => {
     set({ selections });
   },
@@ -88,8 +89,8 @@ const createActions = (set, get) => ({
 });
 
 const usePlan = create((set, get) => ({
-	...state,
-	...createActions(set, get),
+  ...state,
+  ...createActions(set, get),
 }));
 
 export default usePlan;

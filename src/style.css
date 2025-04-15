@@ -56,7 +56,12 @@ header .header_inner {
   font-weight: 800;
   letter-spacing: 1px;
   color: #fff;
-  text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  text-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .logo.black {
@@ -139,15 +144,9 @@ header .header_inner {
   cursor: pointer;
   z-index: 11;
 }
-.gnb .gnb_list .login {
-  font-size: 23px;
-  font-family: 'Nanum Gothic', sans-serif;
-  font-weight: 700;
-  color: #3a3a3a;
-  padding: 0 0 0 20px;
-}
+
 .gnb_list .lnb {
-  font-size: 15px;
+  font-size: 18px;
   font-family: 'Nanum Gothic', sans-serif;
   font-weight: 700;
   color: #3a3a3a;
@@ -184,7 +183,7 @@ header .header_inner {
 }
 .schedule-container {
   width: 100%;
-	height: 100vh;
+  height: 100vh;
   overflow: auto;
 }
 .main-wrap .main_textbox {
@@ -206,7 +205,7 @@ header .header_inner {
   left: 280px;
 }
 
-.schedule-textbox .subTitle {
+/* .schedule-textbox .subTitle {
   font-family: 'Nanum Gothic', sans-serif;
   font-size: 18px;
   color: #3b90f9;
@@ -220,7 +219,7 @@ header .header_inner {
   line-height: 60px;
   margin-top: 20px;
   animation: FadeInTitle 1s ease 0.75s forwards;
-}
+} */
 @keyframes FadeInTitle {
   0% {
     opacity: 0;
@@ -236,6 +235,7 @@ header .header_inner {
   position: relative;
   display: flex;
 }
+
 .schedule_content_img .schedule_imgbox {
   position: absolute;
   top: 0;
@@ -359,8 +359,7 @@ header .header_inner {
   text-align: center;
   margin-top: 30px;
 }
-.popup-container .popup-content .popup-description p {
-}
+
 .popup-container .popup-content .popup-description .popup-notice {
   line-height: 24px;
 }
@@ -384,6 +383,7 @@ header .header_inner {
   text-align: center;
   line-height: 40px;
 }
+
 .container_textbox .title {
   font-size: 30px;
   line-height: 36px;

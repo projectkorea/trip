@@ -4,9 +4,7 @@ import App from './App';
 import { BrowserRouter, Routes, Route } from 'react-router';
 import Schedule from './components/schedules/Schedule';
 import CityPage from './components/schedules/CityPage';
-
 import ScheduleButton from '@common/ScheduleButton';
-import TripDetails from './components/TripDetails';
 import Tourguide from './components/schedules/Tourguide';
 import AIResult from './components/schedules/AIResult';
 
@@ -20,7 +18,6 @@ root.render(
       <Route path="/schedule" element={<Schedule />} />
       <Route path="/schedule/citypage" element={<CityPage />} />
       <Route path="/schedule/result" element={<AIResult />} />
-      <Route path="/components/TripDetails" element={<TripDetails />} />
       <Route path="/Tourguide" element={<Tourguide />} />
     </Routes>
   </BrowserRouter>

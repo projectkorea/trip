@@ -1,13 +1,14 @@
 .nav_bar {
-	width: 800px;
-	margin: 0 auto;
+  width: 800px;
+  margin: 0 auto;
 }
-.nav_bar .nav_number {
-	font-family: "Nanum Gothic", sans-serif;
-	font-size: 14px;
-	font-weight: 700;
-	position: relative;
-	top: 10px;
-	left: 0;
-	margin: 0 auto;
+
+.nav_number {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: relative;
+  top: 10px;
+  left: 0;
+  margin: 0 auto;
 }

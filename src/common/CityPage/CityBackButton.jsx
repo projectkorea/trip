@@ -18,10 +18,10 @@ function CityBackButton() {
             border: '1px solid #ddd',
           }}
           onClick={setPreviousProgress}
-          onMouseOver={(e) => (e.currentTarget.style.background = '#e0e0e0')}
-          onMouseOut={(e) => (e.currentTarget.style.background = '#f0f0f0')}
+          onMouseOver={(e) => (e.currentTarget.style.background = '#d7bfe0')}
+          onMouseOut={(e) => (e.currentTarget.style.background = '#efecec')}
         >
-          🔙 뒤로가기
+          <span style={{ fontSize: '30px' }}>🔙</span>
         </div>
       )}
     </>
