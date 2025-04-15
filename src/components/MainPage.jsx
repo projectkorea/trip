@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router';
 import ScheduleButton from '@common/ScheduleButton';
 import styled from 'styled-components';
 
-const LandingPageLayout = styled.div`
+const MainPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,18 +22,18 @@ const Title = styled.h1`
   width: 80%;
 `;
 
-function Main() {
+function MainPage() {
   const navigate = useNavigate();
   const handleOnClick = () => {
     navigate('/schedule');
   };
 
   return (
-    <LandingPageLayout>
+    <MainPageContainer>
       <Title>취향에 맞게 똑똑한 AI가 일정을 추천해 드려요!</Title>
       <ScheduleButton text="AI 추천 일정보기" onClick={handleOnClick} to="/schedule" />
-    </LandingPageLayout>
+    </MainPageContainer>
   );
 }
 
-export default Main;
+export default MainPage;
