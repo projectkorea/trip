@@ -154,7 +154,6 @@ yarn build
 │       ├── ScheduleButton.css
 │       ├── TripSelection.css
 │       ├── App.jsx      # 메인 애플리케이션 컴포넌트
-│       ├── common.css   # 공통 스타일
 │       ├── index.js     # 진입점
 │       ├── schedule.css # 일정 관련 스타일
 │       └── style.css    # 전역 스타일

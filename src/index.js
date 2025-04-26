@@ -2,11 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter, Routes, Route } from 'react-router';
-import Schedule from './components/schedules/Schedule';
-import CityPage from './components/schedules/CityPage';
-import ScheduleButton from '@common/ScheduleButton';
-import Tourguide from './components/schedules/Tourguide';
-import AIResult from './components/schedules/AIResult';
+import SchedulePage from './pages/SchedulePage';
+import CityPlanPage from './pages/CityPlanPage';
+import AIResultPage from './pages/AIResultPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,11 +12,9 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route index element={<App />} />
-      <Route path="/" element={<ScheduleButton />} />
-      <Route path="/schedule" element={<Schedule />} />
-      <Route path="/schedule/citypage" element={<CityPage />} />
-      <Route path="/schedule/result" element={<AIResult />} />
-      <Route path="/Tourguide" element={<Tourguide />} />
+      <Route path="/schedule" element={<SchedulePage />} />
+      <Route path="/schedule/cityplan" element={<CityPlanPage />} />
+      <Route path="/schedule/result" element={<AIResultPage />} />
     </Routes>
   </BrowserRouter>
   // </React.StrictMode>

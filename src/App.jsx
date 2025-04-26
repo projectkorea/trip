@@ -1,7 +1,6 @@
 import './style.css';
-import './common.css';
 import Header from '@components/Header';
-import MainPage from '@components/MainPage';
+import MainPage from '@pages/MainPage';
 
 function App() {
   return (

@@ -71,7 +71,7 @@ const AIDescription = styled.p`
   line-height: 1.5;
 `;
 
-function AIResult() {
+function AIResultPage() {
   const { result, loading, error, imageURL } = useGemini();
   let { title, course, tips } = result;
   console.log('TEST', imageURL);
@@ -127,4 +127,4 @@ function AIResult() {
   );
 }
 
-export default AIResult;
+export default AIResultPage;

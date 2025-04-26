@@ -1,7 +1,7 @@
 import Style from './DomesticStyle';
-import Button from '@common/CityPage/Button';
+import Button from '@components/cityplan/Button';
 import usePlan from '@store/usePlan';
-import ButtonWrapper, { ContainerTextbox, Title, Text, Wrapper, Image } from '@common/CityPage/ButtonWrapper';
+import ButtonWrapper, { ContainerTextbox, Title, Text, Wrapper, Image } from '@components/cityplan/ButtonWrapper';
 
 function Domestic() {
   const { handleSingleClick, isSingleSelected } = usePlan();

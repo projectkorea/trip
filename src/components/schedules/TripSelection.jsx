@@ -1,6 +1,6 @@
-import Button from '@common/CityPage/Button';
+import Button from '@components/cityplan/Button';
+import ButtonWrapper, { ContainerTextbox, Title, Text, Image } from '@components/cityplan/ButtonWrapper';
 import usePlan from '@store/usePlan';
-import ButtonWrapper, { ContainerTextbox, Title, Text, Wrapper, Image } from '@common/CityPage/ButtonWrapper';
 
 function TripSelection() {
   const { handleSingleClick, isSingleSelected } = usePlan();
