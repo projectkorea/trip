@@ -1,6 +1,17 @@
 import { useNavigate } from 'react-router';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import Header from '@components/Header';
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const MainContainer = styled.div`
   width: 100%;
@@ -37,7 +48,7 @@ const SubTitle = styled.h3`
   font-size: 18px;
   color: #3b90f9;
   font-weight: bold;
-  animation: FadeInTitle 1s ease 0.75s forwards;
+  animation: ${fadeInUp} 1s ease 0.75s forwards;
 `;
 
 const MainTitle = styled.h2`
@@ -46,7 +57,7 @@ const MainTitle = styled.h2`
   font-size: 45px;
   line-height: 60px;
   margin-top: 20px;
-  animation: FadeInTitle 1s ease 0.75s forwards;
+  animation: ${fadeInUp} 0.3s ease 0.4s forwards;
 
   @media (max-width: 1100px) {
     font-size: 32px;
@@ -59,7 +70,7 @@ const BottomText = styled.div`
   padding-top: 180px;
   padding-left: 50px;
   margin-bottom: 300px;
-  animation: FadeInSub 1.3s ease 0.95s forwards;
+  animation: ${fadeInUp} 0.6s ease 0.4s forwards;
 
   @media (max-width: 1100px) {
     padding-top: 60px;
@@ -104,6 +115,23 @@ const ContainerTextbox = styled.div`
   justify-content: center;
   text-align: center;
   padding: 2rem;
+  animation: ${fadeInUp} 0.9s ease 0.4s forwards;
+`;
+
+const ScheduleImage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: ${fadeInUp} 1.2s ease 0.4s forwards;
+
+  img {
+    max-width: 100%;
+    height: auto;
+
+    @media (max-width: 1100px) {
+      width: 80%;
+    }
+  }
 `;
 
 const Title = styled.div`
@@ -122,21 +150,6 @@ const Text = styled.div`
   font-size: 1rem;
   font-weight: 400;
   color: #a2a1a1;
-`;
-
-const ScheduleImage = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    max-width: 100%;
-    height: auto;
-
-    @media (max-width: 1100px) {
-      width: 80%;
-    }
-  }
 `;
 
 const Button = styled.button`

@@ -1,4 +1,4 @@
-import './style.css';
+import './styles/style.css';
 import Header from '@components/Header';
 import MainPage from '@pages/MainPage';
 

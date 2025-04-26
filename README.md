@@ -150,12 +150,9 @@ yarn build
 │   │   └── usePlan.js   # 여행 계획 상태 관리
 │   └── styles/          # 스타일 파일
 │       ├── CityNextButton.css
-│       ├── CityProgress.module.css
 │       ├── ScheduleButton.css
-│       ├── TripSelection.css
 │       ├── App.jsx      # 메인 애플리케이션 컴포넌트
 │       ├── index.js     # 진입점
-│       ├── schedule.css # 일정 관련 스타일
 │       └── style.css    # 전역 스타일
 ├── .env                 # 환경 변수
 ├── .gitignore           # Git 무시 파일
