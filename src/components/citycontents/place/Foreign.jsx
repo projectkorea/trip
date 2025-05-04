@@ -1,7 +1,6 @@
-import Style from './ForeignStyle';
 import Button from '@components/cityplan/Button';
 import usePlan from '@store/usePlan';
-import ButtonWrapper, { ContainerTextbox, Title, Text, Wrapper, Image } from '@components/cityplan/ButtonWrapper';
+import ButtonWrapper, { ContainerTextbox, Title, Text, Image } from '@components/cityplan/ButtonWrapper';
 
 function Foreign() {
   const { handleSingleClick, isSingleSelected } = usePlan();

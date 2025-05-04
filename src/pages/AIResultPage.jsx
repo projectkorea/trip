@@ -71,11 +71,10 @@ const AIDescription = styled.p`
   line-height: 1.5;
 `;
 
-function AIResultPage() {
+export default function AIResultPage() {
+  console.log('TEST AIResultPage 랜더링');
   const { result, loading, error, imageURL } = useGemini();
   let { title, course, tips } = result;
-  console.log('TEST', imageURL);
-  console.log(`title: ${title}, course: ${course}, tips: ${tips}`);
 
   course = JSON.stringify(course);
   tips = JSON.stringify(tips);
@@ -85,9 +84,8 @@ function AIResultPage() {
       console.log('Gemini 응답:', result);
     }
     if (error) {
-      console.error('Gemini 에러:', error);
+      console.log('Gemini 에러:', error);
     }
-    console.log('TEST', imageURL);
   }, [result, error, imageURL]);
 
   return loading ? (
@@ -126,5 +124,3 @@ function AIResultPage() {
     </ResultContainer>
   );
 }
-
-export default AIResultPage;

@@ -1,8 +1,8 @@
-import Domestic from './Domestic';
-import Foreign from './Foreign';
+import Domestic from './place/Domestic';
+import Foreign from './place/Foreign';
 import usePlan from '@store/usePlan';
 
-function CityContentTwo() {
+function TripPlace() {
   const {
     selections: { step1 },
   } = usePlan();
@@ -15,4 +15,4 @@ function CityContentTwo() {
   );
 }
 
-export default CityContentTwo;
+export default TripPlace;

@@ -57,5 +57,5 @@ function ButtonWrapper({ children, direction = 'row', titleText }) {
   );
 }
 
-export { ContainerTextbox, Title, Text, Wrapper, Image };
+export { ContainerTextbox, Title, Text, Image };
 export default ButtonWrapper;

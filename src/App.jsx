@@ -1,5 +1,5 @@
 import './styles/style.css';
-import Header from '@components/Header';
+import Header from '@common/Header';
 import MainPage from '@pages/MainPage';
 
 function App() {

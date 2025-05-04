@@ -1,8 +1,8 @@
 import Button from '@components/cityplan/Button';
 import usePlan from '@store/usePlan';
-import ButtonWrapper, { ContainerTextbox, Title, Text, Wrapper, Image } from '@components/cityplan/ButtonWrapper';
+import ButtonWrapper, { ContainerTextbox, Title, Text, Image } from '@components/cityplan/ButtonWrapper';
 
-function TravelStyle() {
+function TripStyle() {
   const { handleMultiClick, isMultiSelected } = usePlan();
   return (
     <>
@@ -48,4 +48,4 @@ function TravelStyle() {
   );
 }
 
-export default TravelStyle;
+export default TripStyle;
