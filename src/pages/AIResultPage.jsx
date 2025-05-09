@@ -51,14 +51,6 @@ const ResultContent = styled.div`
   white-space: pre-wrap;
 `;
 
-const ErrorMessage = styled.div`
-  width: 100%;
-  padding: 1rem;
-  background-color: #ffebee;
-  color: #c62828;
-  border-radius: 8px;
-  text-align: center;
-`;
 const AITitle = styled.h2`
   font-size: 2rem;
   color: #333;
@@ -72,7 +64,6 @@ const AIDescription = styled.p`
 `;
 
 export default function AIResultPage() {
-  console.log('TEST AIResultPage 랜더링');
   const { result, loading, error, imageURL } = useGemini();
   let { title, course, tips } = result;
 
@@ -99,9 +90,7 @@ export default function AIResultPage() {
 
       {imageURL && <ResultImage src={imageURL} alt="관련 이미지" />}
 
-      {error ? (
-        <ErrorMessage>오류가 발생했습니다: {error}</ErrorMessage>
-      ) : loading ? (
+      {loading ? (
         <ResultContent>데이터를 불러오는 중입니다...</ResultContent>
       ) : (
         <ResultContent>
@@ -115,6 +104,14 @@ export default function AIResultPage() {
               <br></br>
               <h3>팁</h3>
               <AIDescription>{tips}</AIDescription>
+              {error && (
+                <>
+                  <br></br>
+                  <AIDescription>
+                    - Google API 서버단에서 에러가 발생하여 mockData로 대신하여 보여드리는 결과입니다.
+                  </AIDescription>
+                </>
+              )}
             </>
           ) : (
             '아직 결과가 없습니다.'

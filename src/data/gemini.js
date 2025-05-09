@@ -1,4 +1,4 @@
-const HawaiiData = `
+const HawaiiResult = `
 {
   "title": "부모님과 함께하는 하와이 5박 6일 여유로운 가족 여행",
   "course": [
@@ -49,4 +49,6 @@ const HawaiiData = `
 }
 `;
 
-export { HawaiiData };
+const HawaiiImageUrl = '/images/mock/hawaii.webp';
+
+export { HawaiiResult, HawaiiImageUrl };
