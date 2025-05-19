@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 import usePlan from '@store/usePlan';
 import { HawaiiResult, HawaiiImageUrl } from '@data/gemini';
 
-const KEY = process.env.REACT_APP_GEMINI_API_KEY;
+const KEY = 'process.env.REACT_APP_GEMINI_API_KEY;';
 
 export default function useGemini() {
   const [result, setResult] = useState({});
