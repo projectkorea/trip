@@ -1,6 +1,5 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '@styles/ScheduleButton.css';
+import '../styles/ScheduleButton.css';
 
 function ScheduleButton({ text = 'text', to }) {
   const navigate = useNavigate(); // navigate 사용

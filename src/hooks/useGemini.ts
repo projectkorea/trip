@@ -27,9 +27,7 @@ export default function useGemini() {
   const contents = selections.step2; // 영어 지역명
   const imageModel = genImageAI.getGenerativeModel({
     model: 'gemini-2.0-flash-exp-image-generation',
-    generationConfig: {
-      responseModalities: ['Image', 'Text'],
-    },
+    generationConfig: {},
   });
 
   const fetchData = async () => {

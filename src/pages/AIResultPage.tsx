@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import LoadingSpinner from '@common/LoadingSpinner';
 import useGemini from '@hooks/useGemini';
