@@ -1,39 +1,14 @@
-import { useNavigate } from 'react-router';
-import ScheduleButton from '@common/ScheduleButton';
-import styled from 'styled-components';
+import StartButton from '@/common/StartButton';
 import type { ReactNode } from 'react';
 
-const MainPageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100vh;
-  background-image: url(/images/main.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-`;
-const Title = styled.h1`
-  font-size: 3rem;
-  font-weight: 600;
-  color: #333;
-  text-align: center;
-  width: 80%;
-`;
-
 function MainPage(): ReactNode {
-  const navigate = useNavigate();
-  const handleOnClick = () => {
-    navigate('/schedule');
-  };
-
   return (
-    <MainPageContainer>
-      <Title>취향에 맞게 똑똑한 AI가 일정을 추천해 드려요!</Title>
-      <ScheduleButton text="AI 추천 일정보기" onClick={handleOnClick} to="/schedule" />
-    </MainPageContainer>
+    <div className="flex flex-col items-center justify-center w-full h-screen bg-cover bg-center bg-no-repeat bg-[url('/images/main.jpg')]">
+      <div className="text-center text-2xl font-bold text-[#333] w-[80%]">
+        취향에 맞게 똑똑한 AI가 일정을 추천해 드려요!
+      </div>
+      <StartButton text="AI 추천 일정보기" to="/schedule" />
+    </div>
   );
 }
 

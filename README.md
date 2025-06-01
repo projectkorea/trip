@@ -131,7 +131,7 @@ yarn build
 │   │       ├── CityProgress.jsx
 │   │       ├── NavBarStyle.jsx
 │   │       ├── LoadingSpinner.jsx
-│   │       └── ScheduleButton.jsx
+│   │       └── StartButton.jsx
 │   ├── components/      # 기능별 컴포넌트
 │   │   └── schedules/   # 일정 관련 컴포넌트
 │   │       ├── CityPage/
@@ -150,7 +150,7 @@ yarn build
 │   │   └── usePlan.js   # 여행 계획 상태 관리
 │   └── styles/          # 스타일 파일
 │       ├── CityNextButton.css
-│       ├── ScheduleButton.css
+│       ├── StartButton.css
 │       ├── App.jsx      # 메인 애플리케이션 컴포넌트
 │       ├── index.js     # 진입점
 │       └── style.css    # 전역 스타일

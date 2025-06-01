@@ -1,6 +1,19 @@
 import { create } from 'zustand';
 
-const state = {
+interface PlanState {
+  progress: number;
+  canNext: boolean;
+  selections: {
+    step1: 'domestic' | 'foreign';
+    step2: string;
+    step3: 'daytrip' | '2night_3day' | '3night_4day' | '4night_5day' | '5night_6day';
+    step4: 'alone' | 'friend' | 'couple' | 'child' | 'parents' | 'other';
+    step5: 'activity' | 'hotplace' | 'nature' | 'tourist' | 'shopping' | 'food';
+    step6: 'packed_schedule' | 'spacious_schedule';
+  };
+}
+
+const state: PlanState = {
   progress: 1,
   canNext: false,
   selections: {
@@ -13,7 +26,19 @@ const state = {
   },
 };
 
-const createActions = (set, get) => ({
+interface PlanActions {
+  setNextProgress: () => void;
+  setPreviousProgress: () => void;
+  setCanNext: (canNext: boolean) => void;
+  setSelections: (selections: PlanState['selections']) => void;
+  setCanNextByProgressValue: () => void;
+  handleSingleClick: (id: string) => void;
+  handleMultiClick: (id: string) => void;
+  isSingleSelected: (id: string) => boolean;
+  isMultiSelected: (id: string) => boolean;
+}
+
+const createActions = (set, get): PlanActions => ({
   setNextProgress: () =>
     set((prevState) => ({
       ...prevState,
@@ -88,7 +113,7 @@ const createActions = (set, get) => ({
   },
 });
 
-const usePlan = create((set, get) => ({
+const usePlan = create<PlanState & PlanActions>((set, get) => ({
   ...state,
   ...createActions(set, get),
 }));

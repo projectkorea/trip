@@ -11,12 +11,14 @@
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.0",
+    "@tailwindcss/vite": "^4.1.8",
     "dotenv": "^16.4.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router": "^7.0.1",
     "react-router-dom": "^7.1.4",
     "styled-components": "^6.1.14",
+    "tailwindcss": "^4.1.8",
     "zustand": "^5.0.3"
   },
   "devDependencies": {
